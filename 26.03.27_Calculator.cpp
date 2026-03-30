@@ -1,40 +1,35 @@
-#include <iostream>
-
-using namespace std;
-
-int main()
-{
-    char c;
-    long long n, sum;
-
-    cin >> n; 
-
-    sum = n;
-
-    while (1)
-    {
-        cin >> c;
-
-        if (c == '=')
-        {
-            cout << sum <<'\n';
-            return 0;
-        }
-
-        cin >> n;
-
-        if (c == '*')
-            sum += n;
-        else if (c == '-')
-            sum -= n;
-        else if (c == '*')
-            sum *= n;
-        else if (c == '/')
-            sum /=n;
-    }
-
-    cout << sum << '\n';
-
-    return 0;
+#include<stdio.h>
+int main(){
+	float num1, num2;
+	char cal,m;	
+	do{
+		printf("첫번째 수는 ? ");
+		scanf("%f", &num1);
+		printf("두번째 수는 ? ");
+		scanf("%f", &num2);
+		do{	
+			printf("원하는 연산은? ");
+			scanf(" %c", &cal);
+			switch(cal) {
+				case '+':
+					printf("답은%.1f 입니다.\n", num1 + num2);
+					break;
+				case '-':
+					printf("답은%.1f 입니다.\n", num1 - num2);
+					break;
+				case '*':
+					printf("답은%.1f 입니다.\n", num1*num2);
+					break;
+				case '/':
+					printf("답은%.1f 입니다.\n", num1/num2);
+					break;
+				}	
+		}while(cal != '+' && cal != '-' && cal != '*' && cal != '/' );
+	
+	
+			printf("계속할까요(y/n)?");
+			scanf(" %c", &m);
+			if(m  == 'n') { break;}
+	}while(m == 'y');
 }
-  
+
